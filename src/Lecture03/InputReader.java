@@ -1,9 +1,8 @@
 package Lecture03;
 
-
 import java.util.Scanner;
 
-public class ReadInput {
+public class InputReader {
     private Scanner scanner;
 
     public String readInputFromConsole(){

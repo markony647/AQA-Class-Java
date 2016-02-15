@@ -1,11 +1,11 @@
-package Lecture03;
+package Lecture04;
+
 
 public class Converter {
 
-    public static int convertStringToInt(String input){
+    public static int convertFromStringToInt(String input){
         int convertedValue = Integer.parseInt(input);
 
         return convertedValue;
     }
 }
-

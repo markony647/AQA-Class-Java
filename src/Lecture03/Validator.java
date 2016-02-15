@@ -1,11 +1,10 @@
 package Lecture03;
 
-
 public class Validator {
 
     public static boolean isNumeric(String str) {
         try {
-            int d = Integer.parseInt(str);
+            Converter.convertStringToInt(str);
         } catch(NumberFormatException nfe) {
             return false;
         }
@@ -19,6 +18,17 @@ public class Validator {
         } else {
             return false;
         }
+    }
 
+    public static boolean isValid(String str){
+        if(isNumeric(str)) {
+            int myValue = Converter.convertStringToInt(str);
+            if(checkRange(myValue)){
+                return true;
+            }
+        }else {
+            return false;
+        }
+        return false;
     }
 }
