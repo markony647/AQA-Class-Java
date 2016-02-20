@@ -66,12 +66,9 @@ public class PersonsContainer implements Searchable {
                     arrayOfFoundPersons.add(p);
                     System.out.println(p.getName() + " found (" + p.getAge() +
                             " years old).");
-                } else {
-                    continue;
                 }
             }
         } else {
-
             System.out.println("Sorry, can't find Person with " + searchQuery +
                     " age.");
         }
