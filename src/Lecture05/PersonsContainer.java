@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class PersonsContainer implements Searchable {
 
     ArrayList<Person>arrayOfPersons = new ArrayList<>();
-    ArrayList<Person> arrayOfFoundPersons = new ArrayList<>();
+    //ArrayList<Person> arrayOfFoundPersons = new ArrayList<>();
 
 
     public void addPersonToArray(Person person){
@@ -38,6 +38,9 @@ public class PersonsContainer implements Searchable {
 
     @Override
     public void findPersonByName(String searchQuery) {
+
+        ArrayList<Person> arrayOfFoundPersons = new ArrayList<>();
+
         searchQuery = searchQuery.toLowerCase();
 
         System.out.println("SEARCH RESULTS:\n");
@@ -48,11 +51,18 @@ public class PersonsContainer implements Searchable {
                     System.out.println(searchQuery.toUpperCase() + " found. He/she is " + p.getAge() + " years old.\n");
                 }
              }
-         }
+        if(arrayOfFoundPersons.isEmpty()) {
+            System.out.println("Nothing were found....");
+
+        }
+
+    }
 
 
     @Override
     public void findPersonByAge(String searchQuery) {
+
+        ArrayList<Person> arrayOfFoundPersons = new ArrayList<>();
 
         int age = Converter.convertFromStringToInt(searchQuery);
         System.out.println("SEARCH RESULTS:\n");
@@ -63,6 +73,10 @@ public class PersonsContainer implements Searchable {
                     System.out.println(p.getName().toUpperCase() + " found (" + p.getAge() +
                             " years old).\n");
                 }
+            }
+        if(arrayOfFoundPersons.isEmpty()) {
+            System.out.println("Nothing were found....");
+
             }
         }
     }
