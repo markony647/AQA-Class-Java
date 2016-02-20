@@ -40,12 +40,12 @@ public class PersonsContainer implements Searchable {
     public void findPersonByName(String searchQuery) {
         searchQuery = searchQuery.toLowerCase();
 
-        System.out.println("Search results:");
+        System.out.println("SEARCH RESULTS:\n");
 
             for (Person p : arrayOfPersons) {
                 if (p.getName().equals(searchQuery)) {
                     arrayOfFoundPersons.add(p);
-                    System.out.println(searchQuery + " found. He/she is " + p.getAge() + " years old");
+                    System.out.println(searchQuery.toUpperCase() + " found. He/she is " + p.getAge() + " years old.\n");
                 }
              }
          }
@@ -55,13 +55,13 @@ public class PersonsContainer implements Searchable {
     public void findPersonByAge(String searchQuery) {
 
         int age = Converter.convertFromStringToInt(searchQuery);
-        System.out.println("Search results:");
+        System.out.println("SEARCH RESULTS:\n");
 
             for (Person p : arrayOfPersons) {
                 if (p.getAge() == age) {
                     arrayOfFoundPersons.add(p);
-                    System.out.println(p.getName() + " found (" + p.getAge() +
-                            " years old).");
+                    System.out.println(p.getName().toUpperCase() + " found (" + p.getAge() +
+                            " years old).\n");
                 }
             }
         }
