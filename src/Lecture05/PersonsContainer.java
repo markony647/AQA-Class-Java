@@ -5,20 +5,14 @@ import java.util.ArrayList;
 
 public class PersonsContainer implements Searchable {
 
-    Person arrayOfPersons [] = new Person[100];
+    ArrayList<Person>arrayOfPersons = new ArrayList<>();
     ArrayList<Person> arrayOfFoundPersons = new ArrayList<>();
-
-    int counter = 0;
 
 
     public void addPersonToArray(Person person){
         System.out.println("The person " + person.getName() + " was added to the storage.");
-        arrayOfPersons[counter] = person;
-        counter++;
-    }
+        arrayOfPersons.add(person);
 
-    public boolean isFull() {
-        return arrayOfPersons.length <= counter;
     }
 
 
@@ -48,10 +42,10 @@ public class PersonsContainer implements Searchable {
         System.out.println("Search results:");
 
         if (Validator.containsName(arrayOfPersons, searchQuery)) {
-            for (int i = 0; i < arrayOfPersons.length; i++) {
-                if (arrayOfPersons[i].getName().equals(searchQuery)) {
-                    arrayOfFoundPersons.add(arrayOfPersons[i]);
-                    System.out.println(searchQuery + " found. He/she is " + arrayOfPersons[i].getAge() + " years old");
+            for (Person p : arrayOfPersons) {
+                if (p.getName().equals(searchQuery)) {
+                    arrayOfFoundPersons.add(p);
+                    System.out.println(searchQuery + " found. He/she is " + p.getAge() + " years old");
                 }
             }
         }   else {
@@ -67,10 +61,10 @@ public class PersonsContainer implements Searchable {
         System.out.println("Search results:");
 
         if(Validator.containsAge(arrayOfPersons, age)) {
-            for (int i = 0; i < arrayOfPersons.length; i++) {
-                if (arrayOfPersons[i].getAge() == age) {
-                    arrayOfFoundPersons.add(arrayOfPersons[i]);
-                    System.out.println(arrayOfPersons[i].getName() + " found (" + arrayOfPersons[i].getAge() +
+            for (Person p : arrayOfPersons) {
+                if (p.getAge() == age) {
+                    arrayOfFoundPersons.add(p);
+                    System.out.println(p.getName() + " found (" + p.getAge() +
                             " years old).");
                 } else {
                     continue;

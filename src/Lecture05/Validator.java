@@ -1,6 +1,8 @@
 package Lecture05;
 
 
+import java.util.ArrayList;
+
 public class Validator {
 
     public static boolean isCharactersOnly(String name) {
@@ -33,20 +35,20 @@ public class Validator {
         return ((isCharactersOnly(name) && isNumeric(age)) && (isCorrectAgeRange(age)));
     }
 
-    public static boolean containsName(Person [] arrayOfPersons, String nameSearchParameter) {
+    public static boolean containsName(ArrayList<Person> personsArray, String nameSearchParameter) {
 
-        for (int i = 0; i < arrayOfPersons.length; i++) {
-            if (arrayOfPersons[i].getName().equals(nameSearchParameter)) {
+        for (Person p : personsArray) {
+            if (p.getName().equals(nameSearchParameter)) {
                 return true;
             }
         }
         return false;
     }
 
-    public static boolean containsAge(Person[] arrayOfPersons, int ageSearchParameter) {
+    public static boolean containsAge(ArrayList<Person> personsArray, int ageSearchParameter) {
 
-        for(int i = 0; i < arrayOfPersons.length; i++) {
-            if(arrayOfPersons[i].getAge() == ageSearchParameter) {
+        for(Person p : personsArray) {
+            if(p.getAge() == ageSearchParameter) {
                 return true;
 
             }
