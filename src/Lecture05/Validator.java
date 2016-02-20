@@ -1,7 +1,7 @@
 package Lecture05;
 
 
-import java.util.ArrayList;
+
 
 public class Validator {
 
@@ -35,24 +35,4 @@ public class Validator {
         return ((isCharactersOnly(name) && isNumeric(age)) && (isCorrectAgeRange(age)));
     }
 
-    public static boolean containsName(ArrayList<Person> personsArray, String nameSearchParameter) {
-
-        for (Person p : personsArray) {
-            if (p.getName().equals(nameSearchParameter)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public static boolean containsAge(ArrayList<Person> personsArray, int ageSearchParameter) {
-
-        for(Person p : personsArray) {
-            if(p.getAge() == ageSearchParameter) {
-                return true;
-
-            }
-        }
-        return false;
-    }
 }
